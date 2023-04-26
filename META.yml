@@ -29,6 +29,8 @@ no_index:
 requires:
   Capture::Tiny: 0
   File::Copy: 0
+  File::Find::Rule: 0
+  File::Find::Rule::DWG: 0
   File::Path: 0
   File::Spec::Functions: 0
   File::Temp: 0

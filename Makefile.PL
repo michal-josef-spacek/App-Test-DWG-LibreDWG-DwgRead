@@ -21,6 +21,8 @@ readme_from 'bin/test-dwg-libredwg-dwgread';
 recursive_author_tests('xt');
 requires 'Capture::Tiny' => 0;
 requires 'File::Copy' => 0;
+requires 'File::Find::Rule' => 0;
+requires 'File::Find::Rule::DWG' => 0;
 requires 'File::Path' => 0;
 requires 'File::Spec::Functions' => 0;
 requires 'File::Temp' => 0;
