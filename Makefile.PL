@@ -5,7 +5,7 @@ use warnings;
 use inc::Module::Install;
 
 # Definition.
-abstract 'Application to test DWG file by LibreDWG dwgread command.';
+abstract 'Application to test DWG files by LibreDWG dwgread command.';
 author 'Michal Josef Spacek <skim@cpan.org>';
 author_requires 'English' => 0;
 author_requires 'File::Object' => 0.05;
