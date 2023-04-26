@@ -1,5 +1,5 @@
 ---
-abstract: 'Application to test DWG file by LibreDWG JSON conversions.'
+abstract: 'Application to test DWG file by LibreDWG dwgread command.'
 author:
   - 'Michal Josef Spacek <skim@cpan.org>'
 build_requires:

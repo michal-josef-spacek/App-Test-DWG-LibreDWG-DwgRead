@@ -127,20 +127,20 @@ __END__
 
 =head1 NAME
 
-App::Test::DWG::LibreDWG::JSON - Base class for cpan-search script.
+App::Test::DWG::LibreDWG::DwgRead - Base class for test-dwg-libredwg-dwgread script.
 
 =head1 SYNOPSIS
 
- use App::Test::DWG::LibreDWG::JSON;
+ use App::Test::DWG::LibreDWG::DwgRead;
 
- my $app = App::Test::DWG::LibreDWG::JSON->new;
+ my $app = App::Test::DWG::LibreDWG::DwgRead->new;
  my $exit_code = $app->run;
 
 =head1 METHODS
 
 =head2 C<new>
 
- my $app = App::Test::DWG::LibreDWG::JSON->new;
+ my $app = App::Test::DWG::LibreDWG::DwgRead->new;
 
 Constructor.
 
@@ -161,16 +161,15 @@ Returns 1 for error, 0 for success.
  use strict;
  use warnings;
 
- use App::Test::DWG::LibreDWG::JSON;
+ use App::Test::DWG::LibreDWG::DwgRead;
 
  # Arguments.
  @ARGV = (
-         '-v9',
-         'TODO_DWG_FILE',
+         '__DIR__',
  );
 
  # Run.
- exit App::Test::DWG::LibreDWG::JSON->new->run;
+ exit App::Test::DWG::LibreDWG::DwgRead->new->run;
 
  # Output like:
  # TODO
@@ -179,6 +178,8 @@ Returns 1 for error, 0 for success.
 
 L<Capture::Tiny>,
 L<File::Copy>,
+L<File::Find::Rule>,
+L<File::Find::Rule::DWG>,
 L<File::Path>,
 L<File::Spec::Functions>,
 L<File::Temp>,
