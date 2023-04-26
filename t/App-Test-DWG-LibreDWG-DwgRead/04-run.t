@@ -22,7 +22,7 @@ my $right_ret = <<"END";
 Usage: $script [-d test_dir] [-h] [-v level] [--version] directory
 	-d test_dir	Test directory (default is directory in system tmp).
 	-h		Print help.
-	-v level	Verbosity level (default 0, max 9).
+	-v level	Verbosity level (default 1, min 0, max 9).
 	--version	Print version.
 	directory	Directory with DWG files to test.
 END
