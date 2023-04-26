@@ -52,6 +52,10 @@ sub run {
 	}
 	$self->{'_directory'} = shift @ARGV;
 
+	if ($self->{'_opts'}->{'v'} == 0) {
+		warn "Verbosity level 0 hasn't detection of ERRORs.\n";
+	}
+
 	my $tmp_dir = $self->{'_opts'}->{'d'};
 	if (defined $tmp_dir && ! -d $tmp_dir) {
 		mkpath($tmp_dir);
@@ -73,9 +77,7 @@ sub run {
 
 		# dwgread.
 		my $dwgread = "$DR $v $dwg_file_out";
-		if ($self->_exec($dwgread, $file_num.'-dwgread')) {
-			return 1;
-		}
+		$self->_exec($dwgread, $file_num.'-dwgread', $dwg_file_in);
 
 		$file_num++;
 	}
@@ -84,31 +86,34 @@ sub run {
 }
 
 sub _exec {
-	my ($self, $command, $log_prefix) = @_;
+	my ($self, $command, $log_prefix, $dwg_file) = @_;
 
 	my ($stdout, $stderr, $exit_code) = capture {
 		system($command);
 	};
 
-	if (defined $log_prefix) {
-		if ($stdout) {
-			my $stdout_file = catfile($self->{'_tmp_dir'},
-				$log_prefix.'-stdout.log');
-			barf($stdout_file, $stdout);
-		}
-		if ($stderr) {
-			my $stderr_file = catfile($self->{'_tmp_dir'},
-				$log_prefix.'-stderr.log');
-			barf($stderr_file, $stderr);
-		}
-	}
-
 	if ($exit_code) {
-		print STDERR "Command '$command' exit with $exit_code.\n";
-		return 1;
+		print STDERR "Cannot dwgread '$dwg_file'.\n";
+		print STDERR "\tCommand '$command' exit with $exit_code.\n";
+		return;
 	}
 
-	return 0;
+	if ($stdout) {
+		my $stdout_file = catfile($self->{'_tmp_dir'},
+			$log_prefix.'-stdout.log');
+		barf($stdout_file, $stdout);
+	}
+	if ($stderr) {
+		my $stderr_file = catfile($self->{'_tmp_dir'},
+			$log_prefix.'-stderr.log');
+		barf($stderr_file, $stderr);
+
+		if (my @num = ($stderr =~ m/ERROR/gms)) {
+			print STDERR "dwgread '$dwg_file' has ".scalar @num." ERRORs\n";
+		}
+	}
+
+	return;
 }
 
 1;
