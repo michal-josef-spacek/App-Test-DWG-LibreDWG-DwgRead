@@ -31,6 +31,10 @@ ARGUMENTS
 EXAMPLE
      test-dwg-libredwg-dwgread __DIR__
 
+SEE ALSO
+    test-dwg-libredwg-json
+        Script to test DWG file by LibreDWG conversions via JSON.
+
 REPOSITORY
     <https://github.com/michal-josef-spacek/App-Test-DWG-LibreDWG-DwgRead>
 

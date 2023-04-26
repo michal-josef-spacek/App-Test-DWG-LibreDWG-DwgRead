@@ -62,6 +62,16 @@ Directory with DWG files to test.
 
  test-dwg-libredwg-dwgread __DIR__
 
+=head1 SEE ALSO
+
+=over
+
+=item L<test-dwg-libredwg-json>
+
+Script to test DWG file by LibreDWG conversions via JSON.
+
+=back
+
 =head1 REPOSITORY
 
 L<https://github.com/michal-josef-spacek/App-Test-DWG-LibreDWG-DwgRead>
