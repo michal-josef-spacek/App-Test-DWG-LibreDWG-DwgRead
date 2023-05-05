@@ -1,5 +1,6 @@
 0.02
  - Add description about tool to doc.
+ - Fix test dependencies.
 
 0.01 2023-04-26T23:06:30+02:00
  - First version.
