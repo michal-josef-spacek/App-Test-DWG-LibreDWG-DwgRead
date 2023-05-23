@@ -21,6 +21,7 @@ meta-spec:
 name: App-Test-DWG-LibreDWG-DwgRead
 no_index:
   directory:
+    - examples
     - inc
     - t
     - xt

@@ -1,6 +1,7 @@
 0.02
  - Add description about tool to doc.
  - Add option for match string.
+ - Fix example in doc.
  - Fix test dependencies.
  - Update Module::Install to 1.21 version.
 
