@@ -1,6 +1,5 @@
 TODO
 ====
-2. Add match some words in stderr output.
 4. Tests.
 5.
 
@@ -10,4 +9,7 @@ Applied
 OK [20230426] skim
 
 3. Example in doc.
+OK [20230523] skim
+
+2. Add match some words in stderr output.
 OK [20230523] skim
