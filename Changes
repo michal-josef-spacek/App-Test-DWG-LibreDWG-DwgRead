@@ -1,4 +1,5 @@
 0.04
+ - Add -f option for print files in matching mode.
 
 0.03 2023-08-18T17:36:05+02:00
  - Add -i option for ignoring of errors.

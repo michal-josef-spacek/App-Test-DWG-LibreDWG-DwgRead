@@ -36,16 +36,18 @@ sub run {
 	# Process arguments.
 	$self->{'_opts'} = {
 		'd' => undef,
+		'f' => 0,
 		'h' => 0,
 		'i' => 0,
 		'm' => undef,
 		'v' => 1,
 	};
-	if (! getopts('d:him:v:', $self->{'_opts'}) || @ARGV < 1
+	if (! getopts('d:fhim:v:', $self->{'_opts'}) || @ARGV < 1
 		|| $self->{'_opts'}->{'h'}) {
 
-		print STDERR "Usage: $0 [-d test_dir] [-h] [-i] [-m match_string] [-v level] [--version] directory\n";
+		print STDERR "Usage: $0 [-d test_dir] [-f] [-h] [-i] [-m match_string] [-v level] [--version] directory\n";
 		print STDERR "\t-d test_dir\tTest directory (default is directory in system tmp).\n";
+		print STDERR "\t-f\t\tPrint file.\n";
 		print STDERR "\t-h\t\tPrint help.\n";
 		print STDERR "\t-i\t\tIgnore errors.\n";
 		print STDERR "\t-m match_string\tMatch string (default is not defined).\n";
@@ -121,6 +123,9 @@ sub _exec {
 
 		if (defined $self->{'_opts'}->{'m'}) {
 			foreach my $match_line ($self->_match_lines($stderr)) {
+				if ($self->{'_opts'}->{'f'}) {
+					print $dwg_file.': ';
+				}
 				print $match_line."\n";
 			}
 		}

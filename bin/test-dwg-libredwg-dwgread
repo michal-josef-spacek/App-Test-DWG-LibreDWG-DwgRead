@@ -28,7 +28,7 @@ test-dwg-libredwg-dwgread - Script to test DWG files by LibreDWG dwgread command
 
 =head1 SYNOPSIS
 
- test-dwg-libredwg-dwgread [-d test_dir] [-h] [-i] [-m match_string] [-v level] [--version] directory
+ test-dwg-libredwg-dwgread [-d test_dir] [-f] [-h] [-i] [-m match_string] [-v level] [--version] directory
 
 =head1 DESCRIPTION
 
@@ -45,6 +45,10 @@ report number of ERRORS in run.
 =item * C<-d test_dir>
 
 Test directory. If doesn't exist, create dir in system tmp.
+
+=item * C<-f>
+
+Print file name in matching output.
 
 =item * C<-h>
 
