@@ -1,5 +1,6 @@
 0.04
  - Add -f option for print files in matching mode.
+ - Fix -i option in case of exit code different than 0.
  - Update copyright years.
 
 0.03 2023-08-18T17:36:05+02:00

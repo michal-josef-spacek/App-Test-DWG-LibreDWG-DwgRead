@@ -99,8 +99,10 @@ sub _exec {
 	};
 
 	if ($exit_code) {
-		print STDERR "Cannot dwgread '$dwg_file'.\n";
-		print STDERR "\tCommand '$command' exit with $exit_code.\n";
+		if (! $self->{'_opts'}->{'i'}) {
+			print STDERR "Cannot dwgread '$dwg_file'.\n";
+			print STDERR "\tCommand '$command' exit with $exit_code.\n";
+		}
 		return;
 	}
 
