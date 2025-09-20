@@ -1,4 +1,4 @@
-0.06
+0.06 2025-09-20T18:39:35+02:00
  - Add -s option to select symlink files too. Change default behaviour to
    not select symlinks.
  - Update copyright years.
