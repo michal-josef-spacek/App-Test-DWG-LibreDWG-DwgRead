@@ -1,4 +1,6 @@
 0.06
+ - Add -s option to select symlink files too. Change default behaviour to
+   not select symlinks.
 
 0.05 2024-03-15T22:25:49+01:00
  - Cleanup files in tmp immediately.

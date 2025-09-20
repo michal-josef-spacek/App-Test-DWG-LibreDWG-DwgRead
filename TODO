@@ -2,7 +2,6 @@ TODO
 ====
 4. Tests.
 5. Add possibility to match files defined by glob (*DWG)
-6. Test only hardfile, not links? Why?
 7.
 
 Applied
@@ -15,3 +14,7 @@ OK [20230523] skim
 
 2. Add match some words in stderr output.
 OK [20230523] skim
+
+6. Test only hardfile, not links? Why?
+There is default with hardfiles only. And -s option to select symlinks too.
+OK [20250920] skim

@@ -28,7 +28,7 @@ test-dwg-libredwg-dwgread - Script to test DWG files by LibreDWG dwgread command
 
 =head1 SYNOPSIS
 
- test-dwg-libredwg-dwgread [-d test_dir] [-f] [-h] [-i] [-m match_string] [-v level] [--version] directory
+ test-dwg-libredwg-dwgread [-d test_dir] [-f] [-h] [-i] [-m match_string] [-s] [-v level] [--version] directory
 
 =head1 DESCRIPTION
 
@@ -65,6 +65,10 @@ Default value is error reporting.
 Match string from dwgread stderr.
 
 Default value is not defined.
+
+=item * C<-s>
+
+Select files which are symlinks too.
 
 =item * C<-v level>
 
